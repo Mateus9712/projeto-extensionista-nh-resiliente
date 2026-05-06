@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NH Resiliente | Monitoramento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2><i class="fa-solid fa-droplet"></i> NH Resiliente</h2>
+        <nav>
+            <a href="#" class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+            <a href="#" onclick="carregarAreasRisco()"><i class="fa-solid fa-map-location-dot"></i> Áreas de Risco</a>
+            <a href="#" onclick="mostrarDica('kit')"><i class="fa-solid fa-kit-medical"></i> Kit Emergência</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="header-info">
+                <h1>Painel de Controle Comunitário</h1>
+                <p>Novo Hamburgo, RS</p>
+            </div>
+            <div id="data-atual"></div>
+        </header>
+
+        <section class="status-grid">
+            <div class="status-card danger">
+                <h3>Nível do Rio</h3>
+                <p id="nivel-rio">Consultando...</p>
+                <span class="trend">Estável</span>
+            </div>
+            <div class="status-card info">
+                <h3>Previsão Hoje</h3>
+                <p>Chuvas Isoladas</p>
+                <span class="trend">22°C</span>
+            </div>
+        </section>
+
+        <section class="acao-interativa">
+            <button class="btn-check" onclick="atualizarSistema()">
+                <i class="fa-solid fa-sync"></i> Sincronizar Dados Reais
+            </button>
+            <div id="log-sistema">Aguardando comando do operador...</div>
+        </section>
+
+        <section id="painel-detalhes" class="hidden"></section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
